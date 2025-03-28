@@ -1,11 +1,7 @@
-
 import { Link, router } from "@inertiajs/react";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
-const openSans = Open_Sans({ subsets: ["latin"], weight: ["400"] });
 
 const counties = [
   { name: "Mombasa", code: 1 },
@@ -88,7 +84,7 @@ export default function Submit() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const router = useRouter();
+//   const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -160,7 +156,7 @@ export default function Submit() {
     };
   return (
     <div
-      className={`bg-white text-[#3A3A3A] min-h-screen ${openSans.className}`}
+      className={`bg-white text-[#3A3A3A] min-h-screen `}
     >
       {/* Add ToastContainer here */}
       <ToastContainer position="top-right" autoClose={3000} />
@@ -239,7 +235,7 @@ export default function Submit() {
                 How long did it take you?
               </label>
               <textarea
-                className="w-full p-3 border rounded-lg h-10"
+                className="w-full p-3 border rounded-lg h-18"
                 required
                 name="time" value={formData.time} onChange={handleChange}
               ></textarea>

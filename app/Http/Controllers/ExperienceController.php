@@ -13,8 +13,10 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        $experiences = Experience::latest()->get();
-        return Inertia::render("Experiences/Index", ['experiences' => $experiences]);
+        $experiences = Experience::all();
+        return Inertia::render('Experiences', [
+            'experiences' => $experiences,
+        ]);
     }
 
     /**
